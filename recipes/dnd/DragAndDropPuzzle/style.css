@@ -1,0 +1,32 @@
+.puzzle{
+	background-image: url(play.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: #27D;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+.btn-primary,.btn-primary:hover,.btn-primary:active,.btn-primary:focus,.btn-primary:focus:active {
+    border-width: 4px;
+    background-color: mediumseagreen;
+    border-color: seagreen;
+}
+.btn-secondary,.btn-secondary:hover,.btn-secondary:active,.btn-secondary:focus,.btn-secondary:focus:active {
+    border-width: 4px;
+    background-color: indianred;
+    border-color: darkred;
+}
+.header{
+    text-shadow:-1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+    padding: 10px 0px;
+    text-align: center;
+    color: yellow;
+}
+.btn{
+    margin: 0px 10px;
+    width: 100px;
+}
+
+.footer{
+    padding: 10px 0px;
+    text-align: center;
+}

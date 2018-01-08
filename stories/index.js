@@ -7,8 +7,11 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 
 import DragAndDropPuzzle from '../recipes/dnd/DragAndDropPuzzle';
+import DragAndDropFlowchart from '../recipes/dnd/DragAndDropFlowchart';
+import DragAndDropMap from '../recipes/dnd/DragAndDropMap';
+import DragAndDropVegAndFru from '../recipes/dnd/DragAndDropVegAndFru';
+import DragAndDropFillBlanks from '../recipes/dnd/DragAndDropFillBlanks';
 import Ref from '../recipes/core/Ref';
-
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -22,4 +25,8 @@ storiesOf('Core', module)
 
 
 storiesOf('DragAndDrop', module)
-  .add('DragAndDropPuzzle', () => <DragAndDropPuzzle />);
+  .add('DragAndDropPuzzle', () => <DragAndDropPuzzle />)
+  .add('DragAndDropFlowchart', () => <DragAndDropFlowchart />)
+  .add('DragAndDropMap', () => <DragAndDropMap />)
+  .add('DragAndDropVegAndFru', () => <DragAndDropVegAndFru />)
+  .add('DragAndDropFillBlanks', () => <DragAndDropFillBlanks />)

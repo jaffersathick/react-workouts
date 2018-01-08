@@ -16,6 +16,11 @@ module.exports = {
       {
         test:/\.(jpe?g|png|svg)$/,
         use:'file-loader?name=[path][name].[ext]&outputPath=images/'
+      },
+      {
+        test:/\.css$/,
+        exclude:/node_modules/,
+        use:['style-loader','css-loader']
       }
     ],
   },
