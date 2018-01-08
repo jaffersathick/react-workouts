@@ -6,10 +6,12 @@ import ItemTypes from "./ItemTypes";
 const containerStyle = {
   height: 30,
   width: 80,
-  borderRadius:35,
+  borderRadius: 35,
+  fontWeight: "600",
   border: "1px solid yellow",
-  boxShadow: "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
-  textShadow: '0 1px 0 white',
+  boxShadow:
+    "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
+  textShadow: "0 1px 0 white",
   padding: "4px 0px",
   textAlign: "center",
   fontSize: 14,
@@ -98,7 +100,9 @@ export default class Container extends Component {
           <div
             key={i}
             style={{
-              color: isSubmitted ? (isCorrect ? "lawngreen" : "darkred") : "#333",
+              color: isSubmitted
+                ? isCorrect ? "lawngreen" : "darkred"
+                : "#333",
               whiteSpace: "wrap",
               position: "relative"
             }}

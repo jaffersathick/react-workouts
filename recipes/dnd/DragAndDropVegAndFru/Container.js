@@ -6,7 +6,7 @@ import ItemTypes from "./ItemTypes";
 const containerStyle = {
   width: "40%",
   borderRadius: 5,
-  boxShadow: 'rgba(0, 0, 0, 0.3) 0px 1px 6px, rgba(0, 0, 0, 0.3) 0px 1px 4px',
+  boxShadow: "rgba(0, 0, 0, 0.3) 0px 1px 6px, rgba(0, 0, 0, 0.3) 0px 1px 4px",
   color: "white",
   padding: 5,
   display: "flex",
@@ -68,7 +68,7 @@ export default class Container extends Component {
 
     return connectDropTarget(
       <div
-      className="box"
+        className="box"
         style={{
           ...containerStyle,
           backgroundColor

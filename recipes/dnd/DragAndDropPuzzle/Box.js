@@ -6,11 +6,13 @@ import ItemTypes from "./ItemTypes";
 const style = {
   width: 80,
   fontSize: 14,
+  fontWeight: "600",
   backgroundColor: "yellow",
   border: "1px solid yellow",
-  boxShadow: "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
-  textShadow: '0 1px 0 white',
-  borderRadius:35,
+  boxShadow:
+    "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
+  textShadow: "0 1px 0 white",
+  borderRadius: 35,
   color: "#333",
   padding: "4px 0px",
   textAlign: "center",
@@ -29,7 +31,6 @@ const boxSource = {
   endDrag(props, monitor) {
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-
     if (dropResult) {
     }
   }

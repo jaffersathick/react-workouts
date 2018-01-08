@@ -6,9 +6,12 @@ import ItemTypes from "./ItemTypes";
 const containerStyle = {
   height: 35,
   width: 60,
-  borderRadius:10,
+  borderRadius: 10,
+  wordWrap: "break-word",
+  fontWeight: "600",
   border: "1px solid yellow",
-  boxShadow: "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
+  boxShadow:
+    "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
   padding: 4,
   textAlign: "center",
   fontSize: 9,
@@ -85,7 +88,7 @@ export default class Container extends Component {
 
     let background = "yellow";
     if (isActive) {
-      background = "transparent";
+      background = "yellow";
     } else if (isSubmitted) {
       background = "yellow";
     }
@@ -111,7 +114,7 @@ export default class Container extends Component {
           <div
             key={i}
             style={{
-              color: isSubmitted ? (isCorrect ? "green" : "red") : "black",
+              color: isSubmitted ? (isCorrect ? "green" : "red") : "#111",
               whiteSpace: "wrap",
               position: "relative"
             }}
@@ -125,7 +128,6 @@ export default class Container extends Component {
             />
           </div>
         ))}
-      </div>
-    );
+      </div>);
   }
 }

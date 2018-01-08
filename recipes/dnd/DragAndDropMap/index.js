@@ -73,7 +73,7 @@ export default class DragAndDropApp extends Component {
     };
 
     return (
-      <div className="map" style={{ margin: "0px auto", width: 400 }}>
+      <div className="map">
         <div className="header">
           <h3>Tamil Nadu Map</h3>
         </div>
@@ -94,7 +94,6 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <Preview generator={this.generatePreview} />
           <div style={boxWrapperStyle}>
             {dragTxts.map(
               (txt, index) =>
@@ -105,19 +104,11 @@ export default class DragAndDropApp extends Component {
           </div>
         </div>
         <div className="footer">
-          <button
-            className="btn btn-primary"
-            onClick={this.submitAns}
-          >
-            {" "}
-            Done{" "}
+          <button className="btn btn-primary" onClick={this.submitAns}>
+            Done
           </button>
-          <button
-            className="btn btn-secondary"
-            onClick={this.reset}
-          >
-            {" "}
-            Reset{" "}
+          <button className="btn btn-secondary" onClick={this.reset}>
+            Reset
           </button>
         </div>
       </div>

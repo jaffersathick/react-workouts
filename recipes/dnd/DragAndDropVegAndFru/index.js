@@ -75,12 +75,6 @@ export default class DragAndDropApp extends Component {
       height: 280
     };
 
-    const boxWrapperStyle = {
-      overflow: "hidden",
-      display: "flex",
-      margin: "10px 0px 0px"
-    };
-
     return (
       <div className="food">
         <div className="header">
@@ -103,8 +97,7 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <Preview generator={this.generatePreview} />
-          <div style={boxWrapperStyle} className="rowvf">
+          <div className="rowvf">
             {dragTxts.map(
               (txt, index) =>
                 this.state.userAns[index] === null ? (
@@ -114,19 +107,11 @@ export default class DragAndDropApp extends Component {
           </div>
         </div>
         <div className="footer">
-          <button
-            className="btn btn-primary"
-            onClick={this.submitAns}
-          >
-            {" "}
-            Done{" "}
+          <button className="btn btn-primary" onClick={this.submitAns}>
+            Done
           </button>
-          <button
-            className="btn btn-secondary"
-            onClick={this.reset}
-          >
-            {" "}
-            Reset{" "}
+          <button className="btn btn-secondary" onClick={this.reset}>
+            Reset
           </button>
         </div>
       </div>

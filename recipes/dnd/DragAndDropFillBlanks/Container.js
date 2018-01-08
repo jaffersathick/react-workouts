@@ -96,7 +96,7 @@ export default class Container extends Component {
           <div
             key={i}
             style={{
-              color: isSubmitted ? (isCorrect ? "green" : "red") : "black",
+              color: isSubmitted ? (isCorrect ? "green" : "red") : "black"
             }}
           >
             {" "}
@@ -108,7 +108,6 @@ export default class Container extends Component {
             />
           </div>
         ))}
-      </div>
-    );
+      </div>);
   }
 }

@@ -7,10 +7,12 @@ const style = {
   width: 80,
   fontSize: 10,
   backgroundColor: "yellow",
-  borderRadius:10,
+  borderRadius: 10,
+  fontWeight: "600",
   border: "1px solid yellow",
-  boxShadow: "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
-  color: "black",
+  boxShadow:
+    "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
+  color: "#333",
   padding: "9px 0px",
   textAlign: "center",
   marginBottom: "1rem",
@@ -28,7 +30,6 @@ const boxSource = {
   endDrag(props, monitor) {
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-
     if (dropResult) {
     }
   }

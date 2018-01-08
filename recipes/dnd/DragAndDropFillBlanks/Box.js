@@ -8,7 +8,8 @@ const style = {
   width: 60,
   fontSize: 16,
   backgroundColor: "transparent",
-  boxShadow: "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
+  boxShadow:
+    "inset 0 0 2px 1px white, 0 2px 5px rgba(0,0,0,0.15), inset 0 -17px 0 rgba(0,0,0,0.06)",
   borderBottom: "1px solid #666",
   color: "black",
   textAlign: "center",
@@ -28,7 +29,6 @@ const boxSource = {
   endDrag(props, monitor) {
     const item = monitor.getItem();
     const dropResult = monitor.getDropResult();
-
     if (dropResult) {
     }
   }
