@@ -1,0 +1,39 @@
+.food {
+	min-height: 100vh;
+	background-image: url(bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: soft-light;
+	background-color: #333;
+	background-attachment: fixed;
+}
+.boxs {
+	background-image: url(box.jpeg) !important;
+	background-size: cover;
+}
+.food .main .box{
+	overflow: hidden;
+	display: flex;
+	margin: 10px 0px 0px;
+}
+
+.food .main{
+    min-height: 70vh;
+}
+
+.food .main .container-wrapper{
+	display: flex;
+	justify-content: center;
+	height: 280px;
+}
+
+@media all and (max-width: 400px) {
+	.box div img {
+		height: 100px !important;
+	}
+}
+@media all and (min-width: 1700px) {
+    .food .main .container-wrapper{
+		height: 480px;
+	}
+}

@@ -1,20 +1,9 @@
-.puzzle {
-    margin: 0px auto;
-    width: 400px;
-    background-image: url(play.jpg);
-    background-size: cover;
-    background-blend-mode: soft-light;
-    background-color: #27d;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-        0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-}
-
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus,
 .btn-primary:focus:active {
+    outline: none;
     border-width: 4px;
     background-color: mediumseagreen;
     border-color: seagreen;
@@ -24,23 +13,102 @@
 .btn-secondary:active,
 .btn-secondary:focus,
 .btn-secondary:focus:active {
+    outline: none;
     border-width: 4px;
     background-color: indianred;
     border-color: darkred;
 }
 .header {
-    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
-        1px 1px 0px rgba(0, 0, 0, 0.8);
     padding: 10px 0px;
     text-align: center;
     color: yellow;
+    font-size: 30px;
+    animation:header 600ms linear;
+}
+.header h3{
+    color: yellow;
+    font-size: 30px;
+    font-weight: 600;
+    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+        1px 1px 0px rgba(0, 0, 0, 0.8);
 }
 .btn {
     margin: 0px 10px;
     width: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 50%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+#root{
+    overflow: hidden;
 }
 
 .footer {
     padding: 10px 0px;
     text-align: center;
+    animation:footer 600ms linear;
+}
+.container-wrapper{
+    animation:container 600ms linear;
+    
+}
+.box{
+    animation:box 600ms linear;  
+}
+
+@keyframes container {
+    from {transform:translate(-300px,0px);opacity: 0;}
+    to {transform:translate(0px,0px);opacity: 1;}
+}
+
+@keyframes box {
+    from {transform:translate(300px,0px);opacity: 0;}
+    to {transform:translate(0px,0px);opacity: 1;}
+}
+
+@keyframes header {
+    from {transform:translate(0px,-100px);opacity: 0;}
+    to {transform:translate(0px,0px);opacity: 1;}
+}
+
+@keyframes footer {
+    from {transform:translate(0px,100px);opacity: 0;}
+    to {transform:translate(0px,0px);opacity: 1;}
+}
+
+@media all and (min-width: 1700px) {
+    .header,.footer{
+        transform: scale(1.6);
+    }
 }

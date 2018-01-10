@@ -1,0 +1,34 @@
+.puzzle {
+    height: 100vh;
+    background-image: url(play.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: #27d;
+}
+.puzzle .main{
+    display: flex;
+    min-height: 70vh;
+    justify-content: space-around;
+}
+
+.puzzle .main .container-wrapper{
+    width: 315px;
+    position: relative;
+    align-self: center;
+}
+.puzzle .main .container-wrapper img{
+    width: 250px;
+    height: 250px;
+}
+.puzzle .main .box{
+    align-self: center;
+}
+
+@media all and (min-width: 1700px) {
+    .puzzle .main .container-wrapper {
+        transform: scale(1.5);
+    }
+    .puzzle .main .box{
+        transform: scale(1.5);
+    }
+}

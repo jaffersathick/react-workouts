@@ -6,7 +6,7 @@ import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
 
 import Container from "./Container";
 import Box from "./Box";
-import "./style.css";
+import "./fill.css";
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 export default class DragAndDropApp extends Component {
@@ -58,15 +58,6 @@ export default class DragAndDropApp extends Component {
 
   render() {
     const { dragTxts, dropTxts } = this.state;
-    const containerWrapperStyle = {
-      position: "relative"
-    };
-
-    const boxWrapperStyle = {
-      display: "flex",
-      margin: "10px 5px"
-    };
-
     const text = {
       fontSize: 16,
       backgroundColor: "transparent",
@@ -81,8 +72,8 @@ export default class DragAndDropApp extends Component {
         <div className="header">
           <h3>Fill in the blanks</h3>
         </div>
-        <div style={{ padding: "10px 0px" }}>
-          <div style={containerWrapperStyle} className="screen">
+        <div className="main">
+          <div className="container-wrapper">
             <code style={text}>
               <b>-----------</b> that some of their<b> -----------</b> have one,
               children ask their <b>-----------</b> for a <b>-----------</b>{" "}
@@ -102,7 +93,7 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <div style={boxWrapperStyle}>
+          <div className="box">
             {dragTxts.map(
               (txt, index) =>
                 this.state.userAns[index] === null ? (

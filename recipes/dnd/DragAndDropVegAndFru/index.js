@@ -6,7 +6,7 @@ import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
 
 import Container from "./Container";
 import Box from "./Box";
-import "./style.css";
+import "./food.css";
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 export default class DragAndDropApp extends Component {
@@ -69,19 +69,13 @@ export default class DragAndDropApp extends Component {
 
   render() {
     const { dragTxts, dropTxts } = this.state;
-    const containerWrapperStyle = {
-      display: "flex",
-      justifyContent: "center",
-      height: 280
-    };
-
     return (
       <div className="food">
         <div className="header">
           <h3>Fruit And vegetable</h3>
         </div>
-        <div>
-          <div style={containerWrapperStyle}>
+        <div className="main">
+          <div className="container-wrapper">
             {dropTxts.map((txt, index) => {
               const droppedItems = this.getDroppedItems(index);
               return (
@@ -97,7 +91,7 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <div className="rowvf">
+          <div className="box">
             {dragTxts.map(
               (txt, index) =>
                 this.state.userAns[index] === null ? (

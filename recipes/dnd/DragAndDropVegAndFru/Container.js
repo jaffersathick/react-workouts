@@ -68,7 +68,7 @@ export default class Container extends Component {
 
     return connectDropTarget(
       <div
-        className="box"
+        className="boxs"
         style={{
           ...containerStyle,
           backgroundColor

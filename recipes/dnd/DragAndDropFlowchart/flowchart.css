@@ -1,0 +1,37 @@
+.flowchart {
+	height: 100vh;
+	background-image: url(flow.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: #31708f;
+}
+.flowchart .main{
+	min-height: 70vh;
+	align-self: center;
+}
+.flowchart .main .container-wrapper{
+	position: relative;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.flowchart .main .box{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+@media all and (min-width: 1700px) {
+	.flowchart .main{
+		display: flex;
+	}
+    .flowchart .main .container-wrapper {
+    	align-self: center;
+        transform: scale(1.5);
+    }
+    .flowchart .main .box{
+    	align-self: center;
+        transform: scale(1.5);
+    }
+}

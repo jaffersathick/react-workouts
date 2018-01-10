@@ -1,0 +1,40 @@
+.fill {
+	background-image: url(pattern.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: #33653B;
+	height: 100vh;
+}
+
+.fill .main{
+	padding: 10px 0px;
+	margin: 0 auto;
+	width: 400px;
+	min-height: 70vh;
+}
+
+.fill .container-wrapper{
+	position: relative;
+}
+
+.fill .main .container-wrapper b {
+	color: transparent;
+}
+
+.fill .main .box{
+	display: flex;
+	margin: 10px 5px;
+}
+
+@media all and (min-width: 1700px) {
+	.fill .main{
+		padding: 100px 0px;
+	}
+    .fill .main .container-wrapper {
+        transform: scale(2);
+    }
+    .fill .main .box{
+    	margin: 100px 5px;
+        transform: scale(2);
+    }
+}

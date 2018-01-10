@@ -6,7 +6,7 @@ import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
 
 import Container from "./Container";
 import Box from "./Box";
-import "./style.css";
+import "./flowchart.css";
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 export default class DragAndDropApp extends Component {
@@ -67,22 +67,13 @@ export default class DragAndDropApp extends Component {
 
   render() {
     const { dragTxts, dropTxts } = this.state;
-    const containerWrapperStyle = {
-      position: "relative"
-    };
-
-    const boxWrapperStyle = {
-      display: "flex",
-      flexWrap: "wrap"
-    };
-
     return (
       <div className="flowchart">
         <div className="header">
           <h3>Flow Chart</h3>
         </div>
-        <div>
-          <div style={containerWrapperStyle}>
+        <div className="main">
+          <div className="container-wrapper">
             <svg width="400" height="250">
               <path
                 d="M 5 25 L 360 25"
@@ -192,7 +183,7 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <div style={boxWrapperStyle}>
+          <div className="box">
             {dragTxts.map(
               (txt, index) =>
                 this.state.userAns[index] === null ? (

@@ -8,6 +8,7 @@ import Container from "./Container";
 import Box from "./Box";
 import babyImg from "./baby.png";
 import "./style.css";
+import "./puzzle.css";
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 export default class DragAndDropApp extends Component {
@@ -59,28 +60,14 @@ export default class DragAndDropApp extends Component {
 
   render() {
     const { dragTxts, dropTxts } = this.state;
-    const containerWrapperStyle = {
-      width: 315,
-      position: "relative"
-    };
-
-    const imageStyle = {
-      width: 250,
-      height: 250
-    };
-
-    const boxWrapperStyle = {
-      marginTop: 48
-    };
-
     return (
       <div className="puzzle">
         <div className="header">
           <h3>Baby Puzzle</h3>
         </div>
-        <div style={{ display: "flex" }}>
-          <div style={containerWrapperStyle}>
-            <img src={babyImg} style={imageStyle} />
+        <div className="main">
+          <div className="container-wrapper">
+            <img src={babyImg} />
             {dropTxts.map((txt, index) => {
               const droppedItems = this.getDroppedItems(index);
               return (
@@ -95,7 +82,7 @@ export default class DragAndDropApp extends Component {
               );
             })}
           </div>
-          <div style={boxWrapperStyle}>
+          <div className="box">
             {dragTxts.map(
               (txt, index) =>
                 this.state.userAns[index] === null ? (
