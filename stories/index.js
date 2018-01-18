@@ -12,6 +12,7 @@ import DragAndDropMap from '../recipes/dnd/DragAndDropMap';
 import DragAndDropVegAndFru from '../recipes/dnd/DragAndDropVegAndFru';
 import DragAndDropFillBlanks from '../recipes/dnd/DragAndDropFillBlanks';
 import Ref from '../recipes/core/Ref';
+import './style.css';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 

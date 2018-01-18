@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { DragDropContext } from "react-dnd";
 import MultiBackend, { Preview } from "react-dnd-multi-backend";
 import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
+import "../../../node_modules/confetti-js/dist/index.min.js";
 
 import Container from "./Container";
 import Box from "./Box";
@@ -55,26 +56,23 @@ export default class DragAndDropApp extends Component {
   reset = () => {
     this.setState({ ...this.initialState });
   };
-
   render() {
-    const { dragTxts, dropTxts } = this.state;
-    const text = {
-      fontSize: 16,
-      backgroundColor: "transparent",
-      color: "black",
-      fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-      lineHeight: "2em",
-      padding: 0
-    };
-
+    const { dragTxts, dropTxts, isSubmitted } = this.state;
+    if(isSubmitted == true){
+      var confettiSettings = { target: 'my-canvas' };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+    }
+    
     return (
       <div className="fill">
+      <canvas id="my-canvas" style={{zIndex:isSubmitted ? 1 : -1}}></canvas>
         <div className="header">
           <h3>Fill in the blanks</h3>
         </div>
         <div className="main">
           <div className="container-wrapper">
-            <code style={text}>
+            <code>
               <b>-----------</b> that some of their<b> -----------</b> have one,
               children ask their <b>-----------</b> for a <b>-----------</b>{" "}
               phone at a very <b>----------</b>age.
@@ -106,7 +104,7 @@ export default class DragAndDropApp extends Component {
           <button className="btn btn-primary" onClick={this.submitAns}>
             Done
           </button>
-          <button className="btn btn-secondary" onClick={this.reset}>
+          <button className="btn btn-secondary" style={{zIndex:isSubmitted ? 1 : 1}} onClick={this.reset}>
             Reset
           </button>
         </div>

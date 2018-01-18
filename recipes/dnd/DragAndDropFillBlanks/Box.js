@@ -13,8 +13,8 @@ const style = {
   borderBottom: "1px solid #666",
   color: "black",
   textAlign: "center",
-  margin: "5px",
-  lineHeight: "1em",
+  margin: 5,
+  lineHeight: "21px",
   cursor: "move"
 };
 

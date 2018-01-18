@@ -1,0 +1,166 @@
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus:active {
+  outline: none;
+  border-width: 4px;
+  background-color: mediumseagreen;
+  border-color: seagreen;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:focus:active {
+  outline: none;
+  border-width: 4px;
+  background-color: indianred;
+  border-color: darkred;
+}
+
+.header {
+  padding: 10px 0px;
+  text-align: center;
+  animation: header 600ms linear;
+}
+
+.header h3 {
+  margin: 0;
+  color: yellow;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+  1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+.btn {
+  transform: rotate(-7deg);
+  border-radius: 20px 0px;
+  margin: 0px 10px;
+  width: 100px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms linear;
+}
+
+.btn:hover {
+  border-radius: 0px 20px;
+  transform: rotate(-7deg) translateY(-3px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 50%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0%  {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+#root {
+  overflow: hidden;
+}
+
+.footer {
+  padding: 10px 0px;
+  text-align: center;
+  animation: footer 600ms linear;
+}
+
+.container-wrapper {
+  animation: container 600ms linear;
+}
+
+.box {
+  animation: box 600ms linear;
+}
+
+@keyframes container {
+  from {
+    transform: translate(-300px, 0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes box {
+  from {
+    transform: translate(300px, 0px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes header {
+  from {
+    transform: translate(0px, -100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes footer {
+  from {
+    transform: translate(0px, 100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@media all and (min-width: 1700px) {
+  .header {
+    transform: scale(1.6);
+  }
+  .header h3 {
+    font-size: 60px;
+  }
+  .footer {
+    transform: scale(2);
+  }
+}
+
+canvas {
+  right: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+}

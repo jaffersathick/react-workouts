@@ -3,11 +3,11 @@ import { render } from "react-dom";
 import { DragDropContext } from "react-dnd";
 import MultiBackend, { Preview } from "react-dnd-multi-backend";
 import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
+import "../../../node_modules/confetti-js/dist/index.min.js";
 
 import Container from "./Container";
 import Box from "./Box";
 import babyImg from "./baby.png";
-import "./style.css";
 import "./puzzle.css";
 
 @DragDropContext(MultiBackend(HTML5toTouch))
@@ -59,9 +59,15 @@ export default class DragAndDropApp extends Component {
   };
 
   render() {
-    const { dragTxts, dropTxts } = this.state;
+    const { dragTxts, dropTxts, isSubmitted } = this.state;
+    if(isSubmitted == true){
+      var confettiSettings = { target: 'my-canvas',"max":"200","props":["circle","square"],"colors":[[255,0,86],[50,174,127],[0,161,255],[249,241,89]] };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+    }
     return (
       <div className="puzzle">
+      <canvas id="my-canvas" style={{zIndex:isSubmitted ? 1 : -1}}></canvas>
         <div className="header">
           <h3>Baby Puzzle</h3>
         </div>
@@ -95,7 +101,7 @@ export default class DragAndDropApp extends Component {
           <button className="btn btn-primary" onClick={this.submitAns}>
             Done
           </button>
-          <button className="btn btn-secondary" onClick={this.reset}>
+          <button className="btn btn-secondary" style={{ zIndex:isSubmitted ? 1 : 1 }} onClick={this.reset}>
             Reset
           </button>
         </div>
@@ -103,3 +109,4 @@ export default class DragAndDropApp extends Component {
     );
   }
 }
+

@@ -1,35 +1,37 @@
 .map {
-	height: 100vh;
-	background-image: url(central.jpg);
-    background-size: cover;
-    background-blend-mode: soft-light;
-    background-color: #541;
+  height: 100vh;
+  background-image: url(central.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-color: #aa9;
 }
 
-.map .main{
-	display: flex;
-	min-height: 70vh;
-	justify-content: space-around;
-}
-.map .main .container-wrapper{
-	width: 300px;
-	position: relative;
-	align-self: center;
-}
-.map .main .container-wrapper img{
-    width: 310px;
-    height: 350px;
+.map .main {
+  display: flex;
+  min-height: 70vh;
+  justify-content: space-around;
 }
 
-.map .main .box{
-    align-self: center;
+.map .main .container-wrapper {
+  width: 300px;
+  position: relative;
+  align-self: center;
+}
+
+.map .main .container-wrapper img {
+  width: 310px;
+  height: 350px;
+}
+
+.map .main .box {
+  align-self: center;
 }
 
 @media all and (min-width: 1700px) {
-    .map .main .container-wrapper {
-        transform: scale(1.5);
-    }
-    .map .main .box{
-        transform: scale(1.5);
-    }
+  .map .main .container-wrapper {
+    transform: scale(2);
+  }
+  .map .main .box {
+    transform: scale(2);
+  }
 }
